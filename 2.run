@@ -42,6 +42,7 @@
 # ----------------------------
 # DOWNLOAD SCRIPT FROM GITHUB
 # ----------------------------
+	wget -O /etc/pacman.d/mirrorlist https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/files/mirrorlist
 	wget https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/3.run
 	chmod +x /mnt/root/3.run
 	chown akhetopnu:akhetopnu 3.run
