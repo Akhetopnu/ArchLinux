@@ -37,3 +37,5 @@ git clone https://raw.githubusercontent.com/Akhetopnu/ArchLinux.git
 # PROGRAMS / APPS
 # ----------------
 	packer -S brightness-controller chromium cmst compton connman dialog deluge docker docker-compose ffmpeg git gpg gedit htop i3-gaps-next-git libreoffice-fresh lxappearance neofetch nvidia nvidia-settings nitrogen feh mpd ncmpcpp nodejs npm pavucontrol pulseaudio-equalizer postgresql pgadmin4 ranger redis redis-desktop-manager rofi rsync system-config-printer print-manager maim tomboy ufw wpa_supplicant wireless_tools wget xorg xorg-xinit x11-ssh-askpass xclip xfc34-notifyd xfce4-power-manager vlc zsh
+
+	exit

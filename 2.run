@@ -47,3 +47,4 @@
 	chown akhetopnu:akhetopnu 3.run
 
 	su -c ./3.run - akhetopnu
+	exit
