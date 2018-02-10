@@ -1,0 +1,98 @@
+#!/bin/bash
+
+# some audio libs (clementine? parole?)
+# pacman -S libcanberra libcanberra-pulse libcabnerra-gstreamer
+
+# video libs (vlc? gimp?)
+pacman -S gnome-video-effects gst-libav gst-plugins-bad gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-ugly phonon-qt4-gstreamer phonon-qt5-gstreamer libdvdcss opencv
+
+# clang
+pacman -S clang openmp
+
+# imagemagick
+pacman -S imagemagick ghostscript
+# libraw libwmf texlive-core
+
+# pulseaudio
+pacman -S pulseaudio pulseaudio-alsa
+
+# compression utils
+pacman -S p7zip lzip
+
+# clementine
+# pacman -S libao faad2 libmad libmp4v2 libmpcdec libcdio-paranoia wavpack
+
+# chromium
+pacman -S kdialog gnome-keyring
+
+# compton
+pacman -S xorg-xprop xorg-xwininfo
+
+# connman
+pacman -S bluez pptpclient
+
+# deluge
+pacman -S python2-service-identity python2-h2
+
+# docker
+pacman -S lxc lua-filesystem dnsmasq arch-install-scripts
+
+# gimp
+# pacman -S colord sane poppler-data poppler-glib gutenprint
+
+# gedit
+# pacman -S gedit-plugins gucharmap libgit2-glib
+
+# htop
+pacman -S lsof strace
+
+# inkscape
+# pacman -S pstoedit python2-scour texlive-core python2-numpy python2-lxml uniconvertor
+
+# nautilus
+# pacman -S gvfs gvfs-afc gvfs-smb gvfs-gphoto2 gvfs-mtp gvfs-goa gvfs-nfs gvfs-google
+
+# ???
+pacman -S geoip geoip-database-extra
+
+# krita
+# pacman -S kde-cli-tools sshfs
+
+# kdeconnect
+# pacman -S ntfs-3g libiscsi python-pykf5 python2-pykf5 poppler-qt5 poppler-data krita-plugin-gmic
+
+# libreoffice
+pacman -S coin-or-mp kdelibs
+
+# lmms
+# pacman -S stk tk
+
+# dolphin
+# pacman -S qt5-webengine qt5-imageformats kimageformats ffmpegthumbs kdegraphics-thumbnailers konsole
+
+# ranger
+pacman -S python-chardet libcaca highlight atool lynx poppler mediainfo
+
+# printer stuff
+pacman -S python-pysocks python-pysmbc cups-pk-helper
+
+# tuxpaint
+# pacman -S tuxpaint-stamps tuxpaint-conf
+
+# ???
+# pacman -S mcpp
+
+# vlc
+pacman -S lirc libva-vdpau-driver libva-intel-driver twolame projectm libgoom2
+
+# nvidia
+pacman -S opencl-nvidia
+
+# ???
+# pacman -S exo xorg-xprop perl-file-mimeinfo
+
+# very small http server
+# pacman -S lighttpd
+
+# ssh
+pacman -S openssh

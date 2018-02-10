@@ -1,0 +1,41 @@
+#!/bin/bash
+
+alias pacman="pacman --noconfirm --noprogressbar --quiet --needed --color=always"
+alias packer="packer -S --noconfirm --noedit --quiet --auronly"
+
+# ----------
+# PARTITION
+# ----------
+
+	# fdisk /dev/sda
+	# 	o - new partition table
+	# 	n - new partition
+	# 	p - primary
+	# 	<enter>x3
+	# 	w - write
+	(echo o; echo n; echo p; echo; echo; echo; echo w;) | fdisk /dev/sda
+
+# -------------------
+# PREPARE FILESYSTEM
+# -------------------
+	mkfs.ext4 -F /dev/sda1
+	mount /dev/sda1 /mnt
+
+# --------------------
+# INSTALL BASE SYSTEM
+# --------------------
+	pacstrap /mnt base base-devel git wget
+	genfstab -U /mnt >> /mnt/etc/fstab
+
+# -----------------------
+# GET SCRIPT FROM GITHUB
+# -----------------------
+	wget https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/2.run
+	chmod +x /mnt/root/2.run
+
+# ------------------------------
+# GET INSIDE AND RUN THE SCRIPT
+# ------------------------------
+	arch-chroot /mnt /root/2.run
+	umount -R /mnt
+	poweroff

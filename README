@@ -1,0 +1,107 @@
+POSEGREGOWAC KTORE Z AUR A KTORE NORMALNIE
+
+Desktop:
+	Icons
+		- mouse - comix
+		- icons - breeze
+		- theme in general - flat-plat?
+	some cool folder icons (?)
+
+	File manager - nautilus/dolphin?, ranger
+	Network manager - connman + cmst
+	File editors - vim/gvim + gedit
+		- plugins
+			- whatever...
+	Compositor - compton + config
+	Window manager - i3-gaps, bspwm(?), sway + config
+	Fonts - Ubuntu, gohu
+	Web browsers - chromium/firefox(-developer?)
+		- plugins
+			- uBlock origin, youtube dark skin/theme
+			- lighthouse
+			- night mode pro
+	Torrents - deluge
+	Videos - totem/parole/vlc
+	Recording - guvcview, obs-studio, screnkey
+	Screenshots - shutter/(kde-)spectacle, scrot/maim/ffmpeg, imagemagick
+	Desktop config - lxappearance/qt(5?)-config, arandr, brightness-controller (zajebisty, cieplo kolorow zmienia)
+	Status bar - polybar, i3bar, yabar
+	Audio - pavucontrol/pulseaudio-equalizer, audacity
+	Photos - mirage, shotwell
+	Notes - tomboy
+	Calendar - calcurse
+	Music - clementine, ncmpcpp, lmms
+	Wallpapers - nitrogen/feh
+	Office suite - LibreOffice
+	Printer - system-config-printer, lpr, print-manager
+	Graphics/SVG - krita?, tuxpaint, gimp, inkscape
+	Terminals - urxvt, st, sakura
+	Mails - thunderbird, mutt
+	Chatting - skypeforlinux, slack, ???
+	Virtual machines - qemu
+	Games? - wine + playonlinux, blobby2, hedgewars
+	App launchers - dmenu, rofi
+	Necessary stuff - nvidia, ufw,
+	Login manager - lightdm, sddm, kdm?gdm? cos co ladnie wyglada, ly (kijowo wyglada i nie odpala .xinitrc i byc moze czegos jeszcze...)
+	Terminal/utilities - htop, lzip, 7z, I7z?, ncurses, wpa_supplicant, wireless_tools, wget, dialog, xorg xinit
+
+TERMINAL APPS:
+	File manager - ranger (CONFIG - nie mam)
+	File editors - vim/gvim (CONFIG)
+	Torrents - rtorrent/deluge-console?
+	Notes - ???
+	Calendar - calcurse OK
+	Music - cmus OK
+	Office - ???
+	Mails - mutt OK
+	Chatting - ???
+	VMs - qemu? OK
+	App lanuchers - ??? (otwieraloby sie na moment zeby pokazac jakies 'okienko' w ncurses i po wybraniu apliacji uruchomiloby ja i zamknelo sie)
+	Firewall - ufw OK
+	Audio visualizer - cli-visualizer (CONFIG) AUR
+
+
+
+
+Useful:
+	xdman - xtreme download manager (?) KORZYSTA Z JAVY WIEC ODPADA
+	mutt - email client (no idea how to use it) (TERMINAL BASED)
+	ffmpeg - yes.
+
+Some bullshit apps for fun:
+	pywal - changes the whole system theme based on colors of the given picture/wallpaper/image AUR
+	cmatrix OK
+	cowsay OK
+	lolcat OK
+	neofetch - AUR
+	thefuck - actually very useful OK
+
+CONFIG FILES:
+	.xinitrc
+	.Xresources
+	.bashrc
+	.bash_profile
+	.profile
+
+
+
+Web dev and shit:
+	node.js
+	databases
+		- redis + redis-desktop-manager
+		- sqlite + sqlitebrowser
+		- mysql + mysql-workbench
+		- postgres(ql?) +  pgadmin3?
+	openssh + some ssh keyring daemon maybe?
+	docker, docker-compose
+	git, rsync
+	wireshark
+	tinyproxy, lighttpd
+
+
+WHAT TO REMOVE THAT IS THERE BY DEFAULT:
+	netctl
+	vi
+	nano
+
+

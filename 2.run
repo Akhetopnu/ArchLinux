@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# --------
+# LOCALES
+# --------
+	sed -i \
+			-e 's/#pl_PL\.U/pl_PL.U/g'\
+			-e 's/#en_US\.U/en_US.U/g'\
+			-e 's/#el_GR\.U/el_GR.U/g'\
+			-e 's/#he_IL\.U/he_IL.U/g'\
+		/etc/locale.gen
+
+	echo 'LANG=en_US.UTF-8' > /etc/locale.conf
+	echo 'KEYMAP=pl' > /etc/vconsole.conf
+	echo 'arch' > /etc/hostname
+	hostname arch
+	locale-gen
+
+# -----
+# TIME
+# -----
+	ln -sf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
+	hwclock --systohc
+	timedatectl set-ntp
+
+# -------------
+# MAKEPKG.CONF
+# -------------
+	sed -i 's/#MAKE.*/MAKEFLAGS="-j'$(($(nproc) + 1))'"/g' /etc/makepkg.conf
+
+# ----------
+# MAKE USER
+# ----------
+	useradd -m -g users -G audio,video,wheel akhetopnu
+	sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+
+	echo 'Set password for akhetopnu:'
+	passwd akhetopnu
+	echo 'Set password for root:'
+	passwd
+
+# ----------------------------
+# DOWNLOAD SCRIPT FROM GITHUB
+# ----------------------------
+	wget https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/3.run
+	chmod +x /mnt/root/3.run
+	chown akhetopnu:akhetopnu 3.run
+
+	su -c ./3.run - akhetopnu

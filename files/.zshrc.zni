@@ -1,0 +1,8 @@
+# The following lines were added by compinstall
+
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle :compinstall filename '/home/akhetopnu/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
