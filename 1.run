@@ -25,7 +25,7 @@ alias packer="packer -S --noconfirm --noedit --quiet --auronly"
 # INSTALL BASE SYSTEM
 # --------------------
 	wget -O /etc/pacman.d/mirrorlist https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/files/mirrorlist
-	pacstrap /mnt base base-devel git wget openssh fakeroot
+	pacstrap /mnt base base-devel git wget openssh fakeroot grub wpa_supplicant dialog
 	genfstab -U /mnt >> /mnt/etc/fstab
 
 # -----------------------
@@ -38,5 +38,5 @@ alias packer="packer -S --noconfirm --noedit --quiet --auronly"
 # GET INSIDE AND RUN THE SCRIPT
 # ------------------------------
 	arch-chroot /mnt /root/2.run
-	/* umount -R /mnt */
-	/* poweroff */
+	# /* umount -R /mnt */
+	# /* poweroff */
