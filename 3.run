@@ -2,7 +2,8 @@
 alias pacman="pacman --noconfirm --noprogressbar --quiet --needed --color=always"
 alias packer="packer -S --noconfirm --noedit --quiet --auronly"
 
-git clone https://raw.githubusercontent.com/Akhetopnu/ArchLinux.git
+/* git clone https://raw.githubusercontent.com/Akhetopnu/ArchLinux.git */
+git clone https://github.com/Akhetopnu/ArchLinux.git
 
 # ---------------------------------
 # CREATE SOME DIRECTORIES IN $HOME
