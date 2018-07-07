@@ -1,4 +1,6 @@
 #!/bin/bash
+alias pacman="pacman --noconfirm --noprogressbar --quiet --needed --color=always"
+alias packer="packer -S --noconfirm --noedit --quiet --auronly"
 
 git clone https://raw.githubusercontent.com/Akhetopnu/ArchLinux.git
 
@@ -6,25 +8,23 @@ git clone https://raw.githubusercontent.com/Akhetopnu/ArchLinux.git
 # CREATE SOME DIRECTORIES IN $HOME
 # ---------------------------------
 	echo 'Creating .config folder and moving config files...'
-	mkdir -vp {Desktop,Documents,Downloads,Music,Pictures,Programs,Videos}
-
+	mkdir -vp {Desktop,Documents,Downloads,Music,Pictures,Programs,Screenshots,Videos}
 
 # ----------------------------
 # INSTALL *** PACKER *** + SOME REQUIRED UTILS
 # ----------------------------
-	pacman -S fakeroot
+	sudo pacman -S fakeroot
 
-	git clone https://aur.archlinux.org/packer.git ~/Programs/
+	git clone https://aur.archlinux.org/packer.git ~/Programs/packer/
 	cd ~/Programs/packer/
 	makepkg -si --noconfirm --noprogressbar
-
 
 # ----------------
 # INTEL MICROCODE
 # ----------------
 	if [[ -n $(cat /proc/cpuinfo | grep -m 1 'vendor_id.*Intel') ]]
 	then
-		pacman -S intel-ucode
+		sudo pacman -S intel-ucode
 	fi
 
 # ------
@@ -32,10 +32,9 @@ git clone https://raw.githubusercontent.com/Akhetopnu/ArchLinux.git
 # ------
 	packer -S ttf-ubuntu-font-family gohufont-powerline
 
-
 # ----------------
 # PROGRAMS / APPS
 # ----------------
-	packer -S brightness-controller chromium cmst compton connman dialog deluge docker docker-compose ffmpeg git gpg gedit htop i3-gaps-next-git libreoffice-fresh lxappearance neofetch nvidia nvidia-settings nitrogen feh mpd ncmpcpp nodejs npm pavucontrol pulseaudio-equalizer postgresql pgadmin4 ranger redis redis-desktop-manager rofi rsync system-config-printer print-manager maim tomboy ufw wpa_supplicant wireless_tools wget xorg xorg-xinit x11-ssh-askpass xclip xfc34-notifyd xfce4-power-manager vlc zsh
+	packer -S brightness-controller chromium cmst compton connman dialog deluge docker docker-compose ffmpeg git gnupg gedit htop i3-gaps-next-git libreoffice-fresh lxappearance neofetch nvidia nvidia-settings nitrogen mpd ncmpcpp nodejs npm pavucontrol pulseaudio-equalizer postgresql pgadmin4 redis redis-desktop-manager rofi rsync system-config-printer print-manager maim tomboy ufw wpa_supplicant wireless_tools wget xorg xorg-xinit x11-ssh-askpass xclip xfce4-notifyd xfce4-power-manager vlc zsh
 
 	exit

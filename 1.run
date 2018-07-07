@@ -31,12 +31,12 @@ alias packer="packer -S --noconfirm --noedit --quiet --auronly"
 # -----------------------
 # GET SCRIPT FROM GITHUB
 # -----------------------
-	wget https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/2.run
+	wget -O /mnt/root/2.run https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/2.run
 	chmod +x /mnt/root/2.run
 
 # ------------------------------
 # GET INSIDE AND RUN THE SCRIPT
 # ------------------------------
 	arch-chroot /mnt /root/2.run
-	umount -R /mnt
-	poweroff
+	/* umount -R /mnt */
+	/* poweroff */

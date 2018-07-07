@@ -26,7 +26,7 @@
 # -------------
 # MAKEPKG.CONF
 # -------------
-	sed -i 's/#MAKE.*/MAKEFLAGS="-j'$(($(nproc) + 1))'"/g' /etc/makepkg.conf
+	sed -i 's/#MAKE.*/MAKEFLAGS="-j'$(nproc)'"/g' /etc/makepkg.conf
 
 # ----------
 # MAKE USER
@@ -43,9 +43,11 @@
 # DOWNLOAD SCRIPT FROM GITHUB
 # ----------------------------
 	wget -O /etc/pacman.d/mirrorlist https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/files/mirrorlist
-	wget https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/3.run
-	chmod +x /mnt/root/3.run
-	chown akhetopnu:akhetopnu 3.run
 
-	su -c ./3.run - akhetopnu
+	cd /home/akhetopnu
+	wget -O 3.run https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/3.run
+	chmod +x 3.run
+	chown akhetopnu 3.run
+
+	su -c "$(pwd)/3.run" - akhetopnu
 	exit
