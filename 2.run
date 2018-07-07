@@ -31,7 +31,8 @@
 # ----------
 # MAKE USER
 # ----------
-	useradd -m -g users -G audio,video,wheel akhetopnu
+	useradd -m -g akhetopnu -G audio,video,wheel akhetopnu
+	/* useradd -m -g users -G audio,video,wheel akhetopnu */
 	sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 
 	echo 'Set password for akhetopnu:'
@@ -42,7 +43,8 @@
 # ----------------------------
 # DOWNLOAD SCRIPT FROM GITHUB
 # ----------------------------
-	wget -O /etc/pacman.d/mirrorlist https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/files/mirrorlist
+	cd /etc/pacman.d/
+	wget https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/files/mirrorlist
 
 	cd /home/akhetopnu
 	wget -O 3.run https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/3.run
@@ -50,4 +52,9 @@
 	chown akhetopnu 3.run
 
 	su -c "$(pwd)/3.run" - akhetopnu
+
+	mkinitcpio -p linux
+	grub-install --target=i386-pc /dev/sda
+	grub-mkconfig -o /boot/grub/grub.cfg
+
 	exit

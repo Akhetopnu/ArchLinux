@@ -25,7 +25,7 @@ alias packer="packer -S --noconfirm --noedit --quiet --auronly"
 # INSTALL BASE SYSTEM
 # --------------------
 	wget -O /etc/pacman.d/mirrorlist https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/files/mirrorlist
-	pacstrap /mnt base base-devel git wget
+	pacstrap /mnt base base-devel git wget openssh fakeroot
 	genfstab -U /mnt >> /mnt/etc/fstab
 
 # -----------------------
