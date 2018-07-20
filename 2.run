@@ -31,6 +31,7 @@
 # ----------
 # MAKE USER
 # ----------
+	groupadd akhetopnu
 	useradd -m -g akhetopnu -G audio,video,wheel akhetopnu
 	/* useradd -m -g users -G audio,video,wheel akhetopnu */
 	sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
@@ -44,6 +45,7 @@
 # DOWNLOAD SCRIPT FROM GITHUB
 # ----------------------------
 	cd /etc/pacman.d/
+	rm mirrorlist
 	wget https://raw.githubusercontent.com/Akhetopnu/ArchLinux/master/files/mirrorlist
 
 	cd /home/akhetopnu
